@@ -1,0 +1,20 @@
+{%extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2>Домашнее задание</h2>
+
+    <ul>
+        <li>ПРЕДМЕТ: {{ homework.subject }} </li>
+        <li>Задание: {{ homework.task }}</li>
+        <li>Cрок сдачи: {{ homework.date }}</li>
+        <li>Добавил: {{ homework.username }}</li>
+    </ul>
+    <form action="" method="POST">
+    <button type="button" class="btn btn-danger">Удалить</button>
+    </form>
+    </br>
+    <a href="/update_homework/{{ homework.id }}"><button type="button" class="btn btn-info">Отредактировать</button></a>
+</div>
+
+{% endblock %}

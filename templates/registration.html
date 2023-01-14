@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<h1 style="text-align: justify;">Sign in</h1>
+<br>
+<form action="" method="post">
+   {{ form.csrf_token }}
+   <div>
+      {{ form.username(placeholder="username") }}
+      {% for error in form.username.errors %}
+      <p>{{ error }}</p>
+      {% endfor %}
+   </div>
+   <br>
+   <div>
+      {{ form.password1(placeholder="password") }}
+      {% for error in form.password1.errors %}
+      <p>{{ error }}</p>
+      {% endfor %}
+   </div>
+   <br>
+   <div>
+      {{ form.password2(placeholder="Confirm password") }}
+      {% for error in form.password2.errors %}
+      <p>{{ error }}</p>
+      {% endfor %}
+   </div>
+   <br>
+   <div>{{ form.submit() }}
+   </div>
+</form>
+<p></p>
+<p><a href="{{ url_for('login') }}">Already have an account?</a></p>
+</body>
+</html>

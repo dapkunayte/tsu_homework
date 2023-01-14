@@ -1,0 +1,40 @@
+{%extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+<h1 style="text-align: justify;">Отредактировать</h1>
+    <form action="" method="post">
+	{{ form.csrf_token }}
+	<p>
+	    Срок сдачи: </br>
+	    {{ form.date(placeholder=homework.date) }}
+	    {% if form.date.errors %}
+		{% for error in form.date.errors %}
+		    {{ error }}
+		{% endfor %}
+	    {% endif %}
+	</p>
+	<p>
+	    Предмет: </br>
+	    {{ form.subject(placeholder=homework.subject) }}
+          {% if form.subject.errors %}
+		{% for error in form.day.errors %}
+		    {{ error }}
+		{% endfor %}
+	    {% endif %}
+	</p>
+    <p>
+	    Задание: </br>
+	    {{ form.task(placeholder=homework.task ) }}
+          {% if form.task.errors %}
+		{% for error in form.task.errors %}
+		    {{ error }}
+		{% endfor %}
+	    {% endif %}
+	</p>
+	<p>
+	    {{ form.submit(class_="btn btn-info", value="Обновить") }}
+	</p>
+    </form>
+</div>
+{% endblock %}
