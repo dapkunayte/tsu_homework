@@ -21,7 +21,8 @@
 ![image](https://user-images.githubusercontent.com/77408297/212474122-ba17b20c-0f7d-467e-a0d5-dbb152946e9b.png)
 
 <h2>Регистрация и авторизация</h2>
-Без авторизации пользователю будет доступен только просмотр списка домашнего задания
-![image](https://user-images.githubusercontent.com/77408297/212474299-71ac7333-cc62-4db9-abc9-8d86de5b7f54.png)
-![image](https://user-images.githubusercontent.com/77408297/212474393-d1998dc0-b64a-4a23-82fe-260733928f95.png)
+Без авторизации пользователю будет доступен только просмотр списка домашнего задания:
+![image](https://user-images.githubusercontent.com/77408297/212474498-ec07c87a-a7bd-43c2-90cc-1b4d7b972558.png)
+![image](https://user-images.githubusercontent.com/77408297/212474527-2406d038-7c35-41d8-bbbc-837fd266b417.png)
+
 
