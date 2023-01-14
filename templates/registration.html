@@ -1,39 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-</head>
-<body>
-<h1 style="text-align: justify;">Sign in</h1>
+{%extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+<h1 style="text-align: justify;">Регистрация</h1>
 <br>
 <form action="" method="post">
    {{ form.csrf_token }}
    <div>
-      {{ form.username(placeholder="username") }}
+      Логин:
+      {{ form.username(placeholder="логин") }}
       {% for error in form.username.errors %}
       <p>{{ error }}</p>
       {% endfor %}
    </div>
    <br>
    <div>
-      {{ form.password1(placeholder="password") }}
+      Пароль:
+      {{ form.password1(placeholder="пароль") }}
       {% for error in form.password1.errors %}
       <p>{{ error }}</p>
       {% endfor %}
    </div>
    <br>
    <div>
-      {{ form.password2(placeholder="Confirm password") }}
+      Подтвердите пароль:
+      {{ form.password2(placeholder="Подтвердите пароль") }}
       {% for error in form.password2.errors %}
       <p>{{ error }}</p>
       {% endfor %}
    </div>
    <br>
-   <div>{{ form.submit() }}
+   <div>{{ form.submit(class_="btn btn-info", value="Зарегистрироваться") }}
    </div>
 </form>
 <p></p>
-<p><a href="{{ url_for('login') }}">Already have an account?</a></p>
-</body>
-</html>
+<p><a href="{{ url_for('login') }}">Уже есть аккаунт?</a></p>
+</div>
+{% endblock %}

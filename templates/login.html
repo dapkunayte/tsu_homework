@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-	<h1 style="text-align: justify;">Log in</h1>
+{%extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+	<h1 style="text-align: justify;">Войти</h1>
     {% for category, message in  get_flashed_messages(with_categories=true) %}
 	<spam class="{{ category }}">{{ message }}</spam>
     {% endfor %}
@@ -13,7 +10,7 @@
     <form action="" method="post">
 	{{ form.csrf_token }}
 	<p>
-	    {{ form.username.label() }}
+	    Логин:
 	    {{ form.username() }}
 	    {% if form.username.errors %}
 		{% for error in form.username.errors %}
@@ -22,7 +19,7 @@
 	    {% endif %}
 	</p>
 	<p>
-	    {{ form.password.label() }}
+	    Пароль:
 	    {{ form.password() }}
 	    {% if form.password.errors %}
 		{% for error in form.password.errors %}
@@ -31,13 +28,13 @@
 	    {% endif %}
 	</p>
 	<p>
-	    {{ form.remember.label() }}
+	    Запомнить меня:
 	    {{ form.remember() }}
 	</p>
 	<p>
-	    {{ form.submit() }}
+	    {{ form.submit(class_="btn btn-info", value="Войти") }}
 	</p>
     </form>
-    <p><a href="{{ url_for('register') }}">Don't have an account?</a></p>
-</body>
-</html>
+    <p><a href="{{ url_for('register') }}">Нет аккаунта?</a></p>
+</div>
+{% endblock %}
